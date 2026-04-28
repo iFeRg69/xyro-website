@@ -30,6 +30,22 @@
       color: #22c55e;
       text-decoration: none;
     }
+
+    input {
+      padding: 8px;
+      border-radius: 6px;
+      border: none;
+      width: 80%;
+    }
+
+    button {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 6px;
+      background: #38bdf8;
+      color: black;
+      cursor: pointer;
+    }
   </style>
 </head>
 
@@ -54,6 +70,23 @@
     <h2>💬 Saran</h2>
     <p>Kirim saran ke email gw ya 👍</p>
   </div>
+
+  <div class="card">
+    <h2>💬 Test Input (XSS Lab)</h2>
+
+    <input id="input" placeholder="ketik sesuatu...">
+    <br><br>
+    <button onclick="tampil()">Kirim</button>
+
+    <p id="output"></p>
+  </div>
+
+  <script>
+  function tampil() {
+    let data = document.getElementById("input").value;
+    document.getElementById("output").innerHTML = data;
+  }
+  </script>
 
 </body>
 </html>
